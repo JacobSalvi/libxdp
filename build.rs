@@ -2,9 +2,9 @@ use std::{env, path};
 
 fn main() {
     let src_dir = path::PathBuf::from(env::var_os("CARGO_MANIFEST_DIR").unwrap());
-    // println!("cargo:rustc-link-lib=static=bpf");
     println!("cargo:rustc-link-search=native=/usr/lib/aarch64-linux-gnu");
     println!("cargo:rustc-link-lib=static=xdp");
+    println!("cargo:rustc-link-lib=static=bpf");
 
     let bindings = bindgen::Builder::default()
         .header("wrapper.h")
