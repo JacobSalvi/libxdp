@@ -6,6 +6,7 @@ fn main() {
     println!("cargo:rustc-link-lib=static=xdp");
     println!("cargo:rustc-link-lib=static=bpf");
     println!("cargo:rustc-link-lib=static=elf");
+    println!("cargo:rustc-link-lib=static=z");
 
     let bindings = bindgen::Builder::default()
         .header("wrapper.h")
