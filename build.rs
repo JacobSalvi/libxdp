@@ -5,6 +5,7 @@ fn main() {
     println!("cargo:rustc-link-search=native=/usr/lib/aarch64-linux-gnu");
     println!("cargo:rustc-link-lib=static=xdp");
     println!("cargo:rustc-link-lib=static=bpf");
+    println!("cargo:rustc-link-lib=static=elf");
 
     let bindings = bindgen::Builder::default()
         .header("wrapper.h")
